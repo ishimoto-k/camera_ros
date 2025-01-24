@@ -129,6 +129,8 @@ cv_to_pv(const libcamera::ControlValue &value)
     CASE_CONVERT(Unsigned32)
     CASE_CONVERT(Point)
 #endif
+   default:
+     ;
   }
 
   return {};
@@ -163,6 +165,8 @@ cv_to_pv_type(const libcamera::ControlId *const id)
     case libcamera::ControlType::ControlTypePoint:
       return rclcpp::ParameterType::PARAMETER_INTEGER_ARRAY;
 #endif
+    default:
+     ;
     }
   }
   else {
@@ -191,6 +195,8 @@ cv_to_pv_type(const libcamera::ControlId *const id)
     case libcamera::ControlType::ControlTypePoint:
       return rclcpp::ParameterType::PARAMETER_NOT_SET;
 #endif
+    default:
+      ;
     }
   }
 

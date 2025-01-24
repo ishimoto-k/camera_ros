@@ -24,6 +24,8 @@ std::to_string(const libcamera::ControlType id)
     CASE_TYPE(Unsigned32)
     CASE_TYPE(Point)
 #endif
+    default:
+       return {};
   }
 
   return {};

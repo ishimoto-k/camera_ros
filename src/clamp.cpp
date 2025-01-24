@@ -158,6 +158,8 @@ clamp(const libcamera::ControlValue &value, const libcamera::ControlValue &min,
     CASE_CLAMP(Unsigned32)
     CASE_CLAMP(Point)
 #endif
+    default:
+	;
   }
 
   return {};
@@ -311,6 +313,8 @@ operator<(const libcamera::ControlValue &lhs, const libcamera::ControlValue &rhs
     CASE_LESS(Unsigned32)
     CASE_LESS(Point)
 #endif
+    default:
+      ;
   }
 
   throw std::runtime_error("unhandled control type " + std::to_string(lhs.type()));
@@ -337,6 +341,8 @@ operator>(const libcamera::ControlValue &lhs, const libcamera::ControlValue &rhs
     CASE_GREATER(Unsigned32)
     CASE_GREATER(Point)
 #endif
+    default:
+      ;
   }
 
   throw std::runtime_error("unhandled control type " + std::to_string(lhs.type()));

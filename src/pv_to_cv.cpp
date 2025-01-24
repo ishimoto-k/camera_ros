@@ -53,6 +53,8 @@ pv_to_cv_int_array(const std::vector<int64_t> &values, const libcamera::ControlT
   case libcamera::ControlTypePoint:
     return libcamera::Point(values[0], values[1]);
 #endif
+  default:
+    ;
   }
   throw should_not_reach();
 }
@@ -81,6 +83,8 @@ pv_to_cv(const rclcpp::Parameter &parameter, const libcamera::ControlType &type)
       CASE_CONVERT_INT(Unsigned32)
       CASE_NONE(Point)
 #endif
+      default:
+         ;
     }
     throw should_not_reach();
   case rclcpp::ParameterType::PARAMETER_DOUBLE:
